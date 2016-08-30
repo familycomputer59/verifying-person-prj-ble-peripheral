@@ -30,7 +30,8 @@ import android.widget.Toast;
 import java.util.UUID;
 
 
-public class MainActivity extends Activity {
+public class
+MainActivity extends Activity {
 
     private final static int REQUEST_ENABLE_BT = 123456;
 
@@ -123,6 +124,12 @@ public class MainActivity extends Activity {
                 }
                 break;
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+//        stopAdvertising();
     }
 
     @Override
@@ -237,6 +244,7 @@ public class MainActivity extends Activity {
         public void onStartSuccess(AdvertiseSettings settingsInEffect) {
             super.onStartSuccess(settingsInEffect);
         }
+
     }
 
     private void stopAdvertising() {
